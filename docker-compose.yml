@@ -1,0 +1,53 @@
+version: "3.3"
+services:
+  productpage:
+    build:
+      context: .
+      dockerfile: Dockerfile-Productpage
+    image: grupo11/productpage
+    ports:
+      - 9080:9080
+    container_name: grupo11-productpage
+
+  details:
+    build:
+      context: .
+      dockerfile: Dockerfile-Details
+    image: grupo11/details
+    environment:
+      - SERVICE_VERSION=v1
+      - ENABLE_EXTERNAL_BOOK_SERVICE=true
+    container_name: grupo11-details
+    depends_on:
+      - productpage
+    ports:
+      - 9080
+      
+  reviews:
+    build:
+      context: .
+      dockerfile: Dockerfile-Reviews
+    image: grupo11/reviews
+    container_name: grupo11-reviews
+    environment:
+      - SERVICE_VERSION=v1
+      - ENABLE_RATINGS=true
+      - STAR_COLOR=black
+    depends_on:
+      - productpage
+    ports:
+      - 9080
+
+  ratings:
+    build:
+      context: .
+      dockerfile: Dockerfile-Ratings
+    image: grupo11/ratings
+    container_name: grupo11-ratings
+    ports:
+      - 9080
+    environment:
+      - SERVICE_VERSION=v1
+    depends_on:
+      - reviews
+
