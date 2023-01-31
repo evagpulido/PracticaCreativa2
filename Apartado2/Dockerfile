@@ -23,5 +23,5 @@ CMD ["python3", "editarTituloHTML.py"]
 
 
 # En el terminal, deberemos ejecutar los siguientes comandos Docker:
-# sudo docker build -t grupo23/product-page .
+# sudo docker build -t grupo11/product-page .
 # sudo docker run -e GROUP_NAME="GRUPO 11" -dp 9080:9080 --name GRUPO11-BOOKSTORE grupo11/product-page
