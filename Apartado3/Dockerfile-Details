@@ -12,4 +12,4 @@ EXPOSE 9080
 
 CMD ["ruby", "/opt/microservices/details.rb", "9080"]
 
-# docker build -t g11/details .
+# docker build -t grupo11/details .
