@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 
-# REALIZADO POR GABRIEL ARTERO MONSALVATJE Y CARLOTA RUIZ DE CONEJO DE LA SEN
 
 import sys 
 from subprocess import call
