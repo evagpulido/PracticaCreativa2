@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-# REALIZADO POR GABRIEL ARTERO MONSALVATJE Y CARLOTA RUIZ DE CONEJO DE LA SEN
+
 
 import logging 
 import sys 
